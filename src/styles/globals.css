@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-electric-blue text-white rounded-full font-medium 
+           shadow-lg hover:shadow-xl hover:scale-105 hover:bg-blue-600 
+           transition-all duration-300 ease-in-out;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-deep-black border-2 border-deep-black 
+           rounded-full font-medium hover:bg-soft-gray hover:border-electric-blue 
+           hover:text-electric-blue transition-all duration-300 ease-in-out;
+  }
+
+  .nav-link {
+    @apply text-deep-black hover:text-electric-blue transition-colors duration-300 
+           relative after:content-[''] after:absolute after:bottom-0 after:left-0 
+           after:w-0 after:h-0.5 after:bg-electric-blue hover:after:w-full 
+           after:transition-all after:duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-6 text-deep-black;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 
+           hover:scale-[1.02] p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg border border-soft-gray focus:ring-2 
+           focus:ring-electric-blue focus:border-transparent transition-all duration-300;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
